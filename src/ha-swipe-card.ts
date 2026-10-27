@@ -314,13 +314,13 @@ if (!customElements.get("ha-swipe-card")) {
   window.customCards = window.customCards || [];
   window.customCards.push({
     type: "ha-swipe-card",
-    name: "HA Swipe Card",
+    name: "Swipe Card",
     description:
       "Swipe through cards; can switch the visible card by the state of an entity assigned to the viewer.",
     documentationURL: "https://github.com/cichond/ha-swipe-card",
   });
   console.info(
-    `%c HA-SWIPE-CARD %c ${__VERSION__} `,
+    `%c SWIPE-CARD %c ${__VERSION__} `,
     "color: white; font-weight: bold; background: #03a9f4",
     "color: white; font-weight: bold; background: dimgray",
   );

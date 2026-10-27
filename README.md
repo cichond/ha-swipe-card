@@ -1,4 +1,4 @@
-# HA Swipe Card
+# Swipe Card
 
 A Lovelace card that puts several cards in a touch slider ([Swiper](https://swiperjs.com/)) and can switch the
 visible slide by itself, based on the state of an entity assigned to the person viewing the dashboard.
@@ -20,7 +20,7 @@ visible slide by itself, based on the state of an entity assigned to the person 
 ### HACS
 
 1. HACS → ⋮ → **Custom repositories** → `https://github.com/cichond/ha-swipe-card`, type **Dashboard**.
-2. Install **HA Swipe Card** and reload the browser.
+2. Install **Swipe Card** and reload the browser.
 
 ### Manual
 
@@ -29,7 +29,7 @@ visible slide by itself, based on the state of an entity assigned to the person 
 2. Settings → Dashboards → ⋮ → **Resources** → add `/local/ha-swipe-card.js` as a **JavaScript module**.
 3. Reload the browser.
 
-The browser console shows `HA-SWIPE-CARD <version>` when the card is loaded.
+The browser console shows `SWIPE-CARD <version>` when the card is loaded.
 
 ## Configuration
 
