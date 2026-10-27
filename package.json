@@ -1,6 +1,6 @@
 {
   "name": "ha-swipe-card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lovelace swipe card that can switch the visible card by the state of an entity assigned to the viewer.",
   "license": "MIT",
   "private": true,
