@@ -152,27 +152,6 @@ parameters:
     delay: 5000
 ```
 
-## Coming from `swipe-card`
-
-Change the type and wrap every card in `card:`:
-
-```yaml
-# before
-type: custom:swipe-card
-cards:
-  - type: entity
-    entity: sensor.a
-# after
-type: custom:ha-swipe-card
-slides:
-  - card:
-      type: entity
-      entity: sensor.a
-```
-
-`start_card`, `card_width`, `reset_after` and `parameters` keep their meaning. Swiper is version 14 here, so a few
-parameter names from old Swiper 6 configurations may differ.
-
 ## Development
 
 ```bash
