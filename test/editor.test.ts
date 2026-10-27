@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from "vitest";
 import "../src/editor";
-import type { HaSwipeCardEditor } from "../src/editor";
+import type { SwipeCardEditor } from "../src/editor";
 import type { HomeAssistant, SwipeCardConfig } from "../src/types";
 
 const hass: HomeAssistant = {
@@ -12,7 +12,7 @@ const hass: HomeAssistant = {
 };
 
 const baseConfig = (): SwipeCardConfig => ({
-  type: "custom:ha-swipe-card",
+  type: "custom:swipe-card",
   follow: { users: [{ person: "person.alice", entity: "sensor.alice" }] },
   slides: [
     { card: { type: "a" }, states: ["one", "two"] },
@@ -22,7 +22,7 @@ const baseConfig = (): SwipeCardConfig => ({
 });
 
 async function mount(config = baseConfig()) {
-  const editor = document.createElement("ha-swipe-card-editor") as HaSwipeCardEditor;
+  const editor = document.createElement("swipe-card-editor") as SwipeCardEditor;
   const emitted: SwipeCardConfig[] = [];
   editor.addEventListener("config-changed", (ev) =>
     emitted.push((ev as CustomEvent).detail.config),
@@ -75,7 +75,7 @@ describe("editor rendering", () => {
   });
 
   it("renders an empty config", async () => {
-    const { root } = await mount({ type: "custom:ha-swipe-card", slides: [] });
+    const { root } = await mount({ type: "custom:swipe-card", slides: [] });
     expect(root.querySelectorAll(".tab")).toHaveLength(0);
     expect(root.querySelector("h3")).not.toBeNull();
   });

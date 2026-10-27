@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { HaSwipeCard } from "../src/ha-swipe-card";
+import type { SwipeCard } from "../src/swipe-card";
 import type { HomeAssistant, SwipeCardConfig } from "../src/types";
 
 window.loadCardHelpers = async () => ({
@@ -10,7 +10,7 @@ window.loadCardHelpers = async () => ({
   },
 });
 
-await import("../src/ha-swipe-card");
+await import("../src/swipe-card");
 
 const hassWith = (state: string): HomeAssistant => ({
   language: "en",
@@ -26,7 +26,7 @@ const hassWith = (state: string): HomeAssistant => ({
 });
 
 const config = (extra: Partial<SwipeCardConfig> = {}): SwipeCardConfig => ({
-  type: "custom:ha-swipe-card",
+  type: "custom:swipe-card",
   follow: { users: [{ person: "person.alice", entity: "sensor.alice" }] },
   slides: [
     { card: { type: "a" }, states: ["one"] },
@@ -37,7 +37,7 @@ const config = (extra: Partial<SwipeCardConfig> = {}): SwipeCardConfig => ({
 });
 
 async function mount(cfg: SwipeCardConfig, state: string) {
-  const card = document.createElement("ha-swipe-card") as HaSwipeCard;
+  const card = document.createElement("swipe-card") as SwipeCard;
   card.setConfig(cfg);
   card.hass = hassWith(state);
   document.body.appendChild(card);
@@ -103,7 +103,7 @@ describe("card", () => {
   });
 
   it("reports an invalid config", () => {
-    const card = document.createElement("ha-swipe-card") as HaSwipeCard;
+    const card = document.createElement("swipe-card") as SwipeCard;
     expect(() => card.setConfig({ type: "x" } as SwipeCardConfig)).toThrow(/slides/);
   });
 });

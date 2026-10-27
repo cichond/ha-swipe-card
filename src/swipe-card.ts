@@ -38,7 +38,7 @@ const computeCardSize = async (card: LovelaceCard): Promise<number> => {
 // (`navigation:` -> null) get turned on with their defaults.
 const SWITCHES = ["navigation", "pagination", "scrollbar"] as const;
 
-export class HaSwipeCard extends LitElement {
+export class SwipeCard extends LitElement {
   @state() private _config?: SwipeCardConfig;
   @state() private _cards: LovelaceCard[] = [];
   // New value = new swiper DOM (config changed).
@@ -71,7 +71,7 @@ export class HaSwipeCard extends LitElement {
   }
 
   static getConfigElement(): HTMLElement {
-    return document.createElement("ha-swipe-card-editor");
+    return document.createElement("swipe-card-editor");
   }
 
   static getStubConfig(): Partial<SwipeCardConfig> {
@@ -309,11 +309,11 @@ export class HaSwipeCard extends LitElement {
   `;
 }
 
-if (!customElements.get("ha-swipe-card")) {
-  customElements.define("ha-swipe-card", HaSwipeCard);
+if (!customElements.get("swipe-card")) {
+  customElements.define("swipe-card", SwipeCard);
   window.customCards = window.customCards || [];
   window.customCards.push({
-    type: "ha-swipe-card",
+    type: "swipe-card",
     name: "Swipe Card",
     description:
       "Swipe through cards; can switch the visible card by the state of an entity assigned to the viewer.",

@@ -18,9 +18,9 @@ const cssAsString = () => ({
 });
 
 export default {
-  input: "src/ha-swipe-card.ts",
+  input: "src/swipe-card.ts",
   output: {
-    file: "dist/ha-swipe-card.js",
+    file: "dist/swipe-card.js",
     format: "es",
     inlineDynamicImports: true,
   },

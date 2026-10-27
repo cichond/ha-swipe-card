@@ -21,7 +21,7 @@ const states = {
 };
 
 const config = (extra: Partial<SwipeCardConfig> = {}): SwipeCardConfig => ({
-  type: "custom:ha-swipe-card",
+  type: "custom:swipe-card",
   slides: [
     { card: { type: "a" }, states: ["one", "two"] },
     { card: { type: "b" }, states: ["three", "one"] },

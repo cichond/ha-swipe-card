@@ -24,9 +24,9 @@ visible slide by itself, based on the state of an entity assigned to the person 
 
 ### Manual
 
-1. Download `ha-swipe-card.js` from the [latest release](https://github.com/cichond/ha-swipe-card/releases/latest)
+1. Download `swipe-card.js` from the [latest release](https://github.com/cichond/ha-swipe-card/releases/latest)
    to `/config/www/`.
-2. Settings → Dashboards → ⋮ → **Resources** → add `/local/ha-swipe-card.js` as a **JavaScript module**.
+2. Settings → Dashboards → ⋮ → **Resources** → add `/local/swipe-card.js` as a **JavaScript module**.
 3. Reload the browser.
 
 The browser console shows `SWIPE-CARD <version>` when the card is loaded.
@@ -34,7 +34,7 @@ The browser console shows `SWIPE-CARD <version>` when the card is loaded.
 ## Configuration
 
 ```yaml
-type: custom:ha-swipe-card
+type: custom:swipe-card
 slides:
   - card:
       type: entity
@@ -65,7 +65,7 @@ parameters:
 ## Switch slide by entity state
 
 ```yaml
-type: custom:ha-swipe-card
+type: custom:swipe-card
 follow:
   users:
     - person: person.alice
@@ -156,16 +156,16 @@ parameters:
 
 ```bash
 npm install
-npm run check   # typecheck, tests, build -> dist/ha-swipe-card.js
+npm run check   # typecheck, tests, build -> dist/swipe-card.js
 npm run watch   # rebuild on change
 ```
 
 - `src/follow.ts` — config validation and the follow logic (no DOM)
-- `src/ha-swipe-card.ts` — the card
+- `src/swipe-card.ts` — the card
 - `src/editor.ts`, `src/strings.ts` — the visual editor and its texts (English, Polish)
 
 Releases: bump `version` in `package.json`, push a `vX.Y.Z` tag. The release workflow runs the checks and
-attaches `ha-swipe-card.js` to the GitHub release, which HACS installs.
+attaches `swipe-card.js` to the GitHub release, which HACS installs.
 
 ## License
 

@@ -66,7 +66,7 @@ const toUsers = (rows: UserRow[]): FollowUser[] =>
         : { person: row.person, entity: row.entity },
     );
 
-export class HaSwipeCardEditor extends LitElement {
+export class SwipeCardEditor extends LitElement {
   @property({ attribute: false }) hass?: HomeAssistant;
   @property({ attribute: false }) lovelace?: unknown;
 
@@ -582,6 +582,6 @@ export class HaSwipeCardEditor extends LitElement {
   `;
 }
 
-if (!customElements.get("ha-swipe-card-editor")) {
-  customElements.define("ha-swipe-card-editor", HaSwipeCardEditor);
+if (!customElements.get("swipe-card-editor")) {
+  customElements.define("swipe-card-editor", SwipeCardEditor);
 }
